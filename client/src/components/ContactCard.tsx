@@ -186,11 +186,31 @@ export function ContactCard({
                                     <XAxis dataKey="timestamp" hide />
                                     <YAxis domain={['auto', 'auto']} />
                                     <Tooltip
-                                        labelFormatter={(t: number) => new Date(t).toLocaleTimeString()}
-                                        contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                                    labelFormatter={(label) =>
+                                        typeof label === 'number'
+                                        ? new Date(label).toLocaleTimeString()
+                                        : ''
+                                    }
+                                    contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                                     />
-                                    <Line type="monotone" dataKey="avg" stroke="#3b82f6" strokeWidth={2} dot={false} name="Avg RTT" isAnimationActive={false} />
-                                    <Line type="step" dataKey="threshold" stroke="#ef4444" strokeDasharray="5 5" dot={false} name="Threshold" isAnimationActive={false} />
+                                    <Line
+                                    type="monotone"
+                                    dataKey="avg"
+                                    stroke="#3b82f6"
+                                    strokeWidth={2}
+                                    dot={false}
+                                    name="Avg RTT"
+                                    isAnimationActive={false}
+                                    />
+                                    <Line
+                                    type="step"
+                                    dataKey="threshold"
+                                    stroke="#ef4444"
+                                    strokeDasharray="5 5"
+                                    dot={false}
+                                    name="Threshold"
+                                    isAnimationActive={false}
+                                    />
                                 </LineChart>
                             </ResponsiveContainer>
                         </div>

@@ -180,7 +180,7 @@ export function ContactCard({
                         {/* Chart */}
                         <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 h-[300px]">
                             <h5 className="text-sm font-medium text-gray-500 mb-4">RTT History & Threshold</h5>
-                                <ResponsiveContainer width="100%" height="100%">
+                            <ResponsiveContainer width="100%" height="100%">
                                 <LineChart data={data}>
                                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f0f0f0" />
                                     <XAxis dataKey="timestamp" hide />
@@ -212,7 +212,7 @@ export function ContactCard({
                                     isAnimationActive={false}
                                     />
                                 </LineChart>
-                                </ResponsiveContainer>
+                            </ResponsiveContainer>
                         </div>
                     </div>
                 </div>
